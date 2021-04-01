@@ -9,6 +9,11 @@ int N;
 vector<int> times;
 vector<priority_queue<int>> pq;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int calculateTime(int n) {
 	if (pq[n].empty()) return times[n];
 	
@@ -27,6 +32,8 @@ int calculateTime(int n) {
 }
 
 int main() {
+	init();
+
 	cin >> N;
 
 	times.resize(N); pq.resize(N);

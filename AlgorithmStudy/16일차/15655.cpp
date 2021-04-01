@@ -10,6 +10,11 @@ vector<int> number;
 vector<int> answer;
 vector<bool> check;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 void combination(int n) {
 	if (n == M) {
 		for (int i = 0; i < n; i++) {
@@ -40,6 +45,8 @@ void combination(int n) {
 }
 
 int main() {
+	init();
+
 	cin >> N >> M;
 
 	for (int i = 0; i < N; i++) {

@@ -8,7 +8,14 @@ vector<char> parenthesis;
 stack<int> pstack;
 bool impossible = false;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int main() {
+	init();
+
 	char a[30];
 	cin.getline(a, 30);
 

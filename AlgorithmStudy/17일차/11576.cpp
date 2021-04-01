@@ -6,7 +6,14 @@ using namespace std;
 int A, B, m;
 vector<int> num;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int main() {
+	init();
+
 	cin >> A >> B;
 	cin >> m;
 

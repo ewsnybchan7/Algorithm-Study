@@ -8,6 +8,11 @@ int upAirR, upAirC;
 int downAirR, downAirC;
 int map[50][50];
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 bool validMap(int y, int x) {
 	if (x < 0 || x >= C) return false;
 	if (y < 0 || y >= R) return false;
@@ -91,6 +96,8 @@ void airPurify() {
 }
 
 int main() {
+	init();
+
 	cin >> R >> C >> T;
 
 	bool air = false;

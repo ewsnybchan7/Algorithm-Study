@@ -14,6 +14,11 @@ bool bluegoal = false;
 char map[10][10];
 bool visited[10][10][10][10];
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 struct State {
 	int rx;
 	int ry;
@@ -167,6 +172,8 @@ void escapeBall() {
 }
 
 int main() {
+	init();
+
 	cin >> N >> M;
 
 	for (int y = 0; y < N; y++) {

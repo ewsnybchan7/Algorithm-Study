@@ -7,6 +7,11 @@ int N;
 vector<int> numbers;
 vector<bool> check;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 void next_permutation() {
 	int n = N;
 	
@@ -24,14 +29,20 @@ void next_permutation() {
 		}
 	} while (n < N && n > 0);
 
-	
-	for (int i = 0; i < n; i++) {
+	if (n == 0) {
+		cout << -1 << "\n";
+		return;
+	}
+
+	for (int i = 0; i < N; i++) {
 		cout << numbers[i] << " ";
 	}
 	cout << "\n";
 }
 
 int main() {
+	init();
+
 	cin >> N;
 
 	for (int i = 0; i < N; i++) {

@@ -7,7 +7,14 @@ using namespace std;
 int N;
 priority_queue<int, vector<int>, greater<int>> cards;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int main() {
+	init();
+
 	cin >> N;
 
 	for (int i = 0; i < N; i++) {

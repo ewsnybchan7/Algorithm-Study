@@ -10,7 +10,14 @@ priority_queue<P, vector<P>, greater<P>> vertex;
 vector<bool> check(1001, false);
 int N, M;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int main() {
+	init();
+
 	cin >> N;
 	cin >> M;
 

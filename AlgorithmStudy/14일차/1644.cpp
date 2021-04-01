@@ -8,7 +8,14 @@ int answer = 0;
 vector<int> prime;
 vector<bool> checkPrime;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int main() {
+	init();
+
 	cin >> N;
 
 	checkPrime.resize(N + 1);

@@ -8,6 +8,11 @@ int n = 0;
 vector<bool> isPrime;
 vector<int> answer;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 void findPrimeNumber() {
 	int prime = 0;
 
@@ -33,6 +38,8 @@ void findPrimeNumber() {
 }
 
 int main() {
+	init();
+
 	cin >> N >> K;
 
 	isPrime.resize(N + 1);

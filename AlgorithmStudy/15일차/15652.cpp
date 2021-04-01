@@ -9,6 +9,11 @@ int N, M;
 vector<int> num;
 set<vector<int>> answer;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 void duplicated_permutation(int n) {
 	if (n == M) {
 		answer.insert(num);
@@ -29,6 +34,8 @@ void duplicated_permutation(int n) {
 
 
 int main() {
+	init();
+
 	cin >> N >> M;
 
 	num.resize(M);

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <deque>
 #include <algorithm>
 
 using namespace std;
@@ -9,7 +8,14 @@ int N;
 vector<int> A;
 vector<int> answer;
 
+void init() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+}
+
 int main() {
+	init();
+
 	cin >> N;
 
 	A.resize(N); answer.resize(N + 1);
