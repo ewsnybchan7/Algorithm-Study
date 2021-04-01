@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<char> parenthesis;
+string parenthesis;
 stack<int> pstack;
 bool impossible = false;
 
@@ -16,29 +16,17 @@ void init() {
 int main() {
 	init();
 
-	char a[30];
-	cin.getline(a, 30);
-
-	for (int i = 0; i < 30; i++) {
-		if (a[i]) parenthesis.push_back(a[i]);
-		else break;
-	}
+	cin >> parenthesis;
 
 	for (int i = 0; i < parenthesis.size(); i++) {
-		if (impossible) break;
-		
-		if (parenthesis[i] == '(') {
-			pstack.push(-1);
-		}
-		else if(parenthesis[i] == '[') {
-			pstack.push(-2);
-		}
+		if (parenthesis[i] == '(') pstack.push(-1);
+		else if(parenthesis[i] == '[') pstack.push(-2);
 		else if (parenthesis[i] == ')') {
 			int sum = 0;
 
 			if (pstack.empty()) {
-				impossible = true;
-				break;
+				cout << 0 << "\n";
+				return 0;
 			}
 
 			while (!pstack.empty()) {
@@ -50,8 +38,8 @@ int main() {
 					break;
 				}
 				else if (top == -2) {
-					impossible = true;
-					break;
+					cout << 0 << "\n";
+					return 0;
 				}
 				else if (top > 0) {
 					sum += top;
@@ -62,8 +50,8 @@ int main() {
 			int sum = 0;
 
 			if (pstack.empty()) {
-				impossible = true;
-				break;
+				cout << 0 << "\n";
+				return 0;
 			}
 
 			while (!pstack.empty()) {
@@ -75,8 +63,8 @@ int main() {
 					break;
 				}
 				else if (top == -1) {
-					impossible = true;
-					break;
+					cout << 0 << "\n";
+					return 0;
 				}
 				else if (top > 0) {
 					sum += top;
@@ -84,27 +72,22 @@ int main() {
 			}
 		}
 		else {
-			impossible = true;
+			cout << 0 << "\n";
+			return 0;
 		}
 	}
 	
 	int sum = 0;
 
-	while (!pstack.empty() && !impossible)
+	while (!pstack.empty())
 	{
 		if (pstack.top() < 0) {
-			impossible = true; 
-			break;
+			cout << 0 << "\n";
+			return 0;
 		}
 		sum += pstack.top();
 		pstack.pop();
 	}
 
-	if (impossible)
-	{
-		cout << 0 << "\n";
-	}
-	else {
-		cout << sum << "\n";
-	}
+	cout << sum << "\n";
 }
