@@ -13,10 +13,10 @@ vector<COORD> chickens;
 vector<COORD> house;
 priority_queue<pair<int, COORD>> pq;
 
-// 그래프를 그려서
-// 행: 집 / 열: 치킨 각 가중치는 치킨 거리
-// 열을 하나씩 지우면서 
-// 그리디하게 가장 먼 거리
+// 그래?��? 그려??
+// ?? �?/ ?? 치킨 �?가중치??치킨 거리
+// ?�을 ?�나??지?�면??
+// 그리?�하�?가??�?거리
 
 void init() {
 	ios_base::sync_with_stdio(false);

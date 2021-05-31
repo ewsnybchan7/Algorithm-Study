@@ -76,6 +76,7 @@ void makeFail() {
 				Trie* dest = current->fail;
 
 				// fail을 참조할 가장 가까운 조상을 찾아간다
+				// next를 가지고 있는 조상을 찾기 위해 계속 올라간다
 				while (dest != root && !dest->go[i])
 					dest = dest->fail;
 

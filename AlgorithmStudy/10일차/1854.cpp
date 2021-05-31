@@ -50,7 +50,7 @@ void dijkstra() {
 			}
 		}
 	}
-	
+
 	for (int i = 1; i < n + 1; i++) {
 		if (dist[i].size() < k) cout << -1 << "\n";
 		else cout << dist[i].top() << "\n";

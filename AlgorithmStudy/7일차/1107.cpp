@@ -1,4 +1,3 @@
-// 중요 문제
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -53,7 +52,7 @@ int main() {
 
 	cin >> N;
 	cin >> M;
-
+		
 	for (int i = 0; i < M; i++) {
 		int num;
 		cin >> num;
@@ -62,15 +61,19 @@ int main() {
 
 	int result = MAX_CHANNEL * 2;
 	int closer = 0;
-	for (int i = 0; i <= MAX_CHANNEL; i++) {
-		if (isValid(i)) {
-			int click = abs(N - i);
-			if (click < result) {
-				result = click;
-				closer = i;
-			}
-		}
+
+	int maxNum = N;
+	while (!isValid(maxNum) && maxNum < MAX_CHANNEL) {
+		maxNum++;
+	}
+	int minNum = N;
+	while (!isValid(minNum) && minNum >= 0) {
+		minNum--;
 	}
 
-	cout << min(abs(N - 100), result + getLength(closer)) << "\n";
+	int maxLength = maxNum < MAX_CHANNEL ? maxNum - N + getLength(maxNum) : MAX_CHANNEL * 2;
+	int minLength = minNum >= 0 ? N - minNum + getLength(minNum) : MAX_CHANNEL * 2;
+
+	int select = min(maxLength, minLength);
+	cout << min(abs(N - 100), select) << "\n";
 }
