@@ -26,16 +26,15 @@ int main() {
 
 		for (int i = 0; i < n; i++) {
 			cin >> graph;
-			if (s.size() == 0) s.push({ graph, i + 1});
+			if (s.size() == 0) s.push({ graph, i });
 			else {
-				if (s.top().first < graph) s.push({ graph, i + 1});
+				if (s.top().first < graph) s.push({ graph, i });
 				else {
-					while (s.size() != 0 && s.top().first >= graph)
+					while (s.size() != 0 && s.top().first > graph)
 					{
 						long long minHegith = s.top().first;
+						int left = s.size() == 1 ? 0 : s.top().second;
 						s.pop();
-
-						int left = s.size() == 0 ? 0 : s.top().second;
 						
 						maxSize = max(maxSize, minHegith * (i - left));
 					}
@@ -47,9 +46,8 @@ int main() {
 		while (!s.empty())
 		{
 			long long minHeight = s.top().first;
+			int left = s.size() == 1 ? 0 : s.top().second;
 			s.pop();
-
-			int left = s.size() == 0 ? 0 : s.top().second;
 
 			maxSize = max(maxSize, minHeight * (n - left));
 		}
