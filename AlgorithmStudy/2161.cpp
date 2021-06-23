@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <queue>
 
 using namespace std;
@@ -22,9 +22,11 @@ int main() {
 
 	while (!cards.empty())
 	{
+		// 1. 제일 위에 있는 카드를 버리고 출력
 		cout << cards.front() << " ";
 		cards.pop();
 
+		// 아직 카드가 남았을 경우 / 2. 위에 있는 카드를 밑으로 옮기기
 		if (!cards.empty()) {
 			int front = cards.front();
 			cards.pop();
